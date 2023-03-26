@@ -14,10 +14,12 @@ import { FaMoon, FaSun } from 'react-icons/fa';
       aria-label={`Switch to ${text} mode`}
       variant="ghost"
       color="current"
+      zIndex={'1'}
       marginLeft="2"
-      pos={"fixed"}
+      pos={'absolute'}
       top={'4'}
       right={'4'}
+     
 
       onClick={toggleColorMode}
       icon={<SwitchIcon />}

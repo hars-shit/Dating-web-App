@@ -113,7 +113,7 @@ const Header=()=> {
       </Drawer>
 
       {/* line bellow header   */}
-      <HStack pos={'relative'} top={'30px'} backgroundColor={'ActiveBorder'} maxH={"full"}  height={'0.1px'}/>
+      <HStack pos={'relative'} top={'30px'} backgroundColor={'ActiveBorder'} maxH={"full"}  height={'0.1px'} marginBottom={"10"}/>
     
     </>
   );

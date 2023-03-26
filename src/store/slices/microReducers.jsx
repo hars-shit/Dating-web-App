@@ -14,5 +14,5 @@ const microReducers=createSlice({
 })
 
 
-export default microReducers.actions
+export default microReducers.reducer;
 export const {saveProfile}=microReducers.actions;

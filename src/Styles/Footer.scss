@@ -1,0 +1,25 @@
+.nav-bottom{
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    height: 55px;
+    box-shadow: 2px 5px 3px rgba(0,0,0,2);
+    background-color: #1a2219;
+    overflow-x: auto;
+    display: flex;
+
+    > .nav-link{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        min-width: 50px;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #ffffff;
+        -webkit-tap-highlight-color: transparent;
+        transition: background-color 01s ease-in-out;
+    }
+}

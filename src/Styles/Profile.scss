@@ -1,0 +1,77 @@
+
+
+div.img-container {
+    max-width: 4024px;
+    width: 100%;
+    margin: 0 auto;
+    height: 150px;
+    position: relative;
+    display: block;
+   border-bottom: 5px solid black;
+    overflow: hidden;
+    margin-top: 5px;
+    max-height: 100%;
+  
+  
+  >img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+  @media (min-width: 576px) {
+    div.img-container {
+      height: 225px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    div.img-container {
+      height: 270px;
+    }
+  }
+  
+  .profile-image-div {
+    display: flex;
+      width: 200px;
+    position: relative;
+    top: -55px;
+    margin-left: 12px;
+  }
+  .profile-image-div btn{
+        position: absolute;
+        
+    }
+.profile-image-div img{
+    border-radius: 50%;
+}
+.profile-image-div p{
+    align-self: flex-end;
+}
+#svg-like{
+    font-size: 30px;
+    color: rgb(86, 91, 80);
+}
+@media (max-width: 768px){
+    .profile-image-div{
+        width: 175px;
+    }
+    #svg-like{
+        font-size: 25px;
+    }
+}
+  
+@media (max-width: 576px){
+    .profile-image-div {
+        width: 130px;
+      position: relative;
+      top: -35px;
+      margin-left: 5px;
+    }
+    #svg-like{
+      
+        font-size: 25px;
+       
+    }
+}
+  

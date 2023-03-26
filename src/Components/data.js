@@ -24,4 +24,4 @@ const data=[
         image:'https://tse1.mm.bing.net/th?id=OIP.nYLK8kqqUKVLIWBkuEBBGQHaHa&pid=Api&rs=1&c=1&qlt=95&w=97&h=97'
     },
 ]
-export {data};
+export  {data};
