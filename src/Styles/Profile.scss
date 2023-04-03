@@ -1,77 +1,129 @@
-
-
-div.img-container {
-    max-width: 4024px;
+.profile-image{
+  max-width: 450px;
+  height: auto;
+  position: relative;
+  #img{
     width: 100%;
-    margin: 0 auto;
-    height: 150px;
-    position: relative;
-    display: block;
-   border-bottom: 5px solid black;
-    overflow: hidden;
-    margin-top: 5px;
-    max-height: 100%;
-  
-  
-  >img {
-    width: 100%;
-    object-fit: cover;
-    object-position: center top;
+    height: 300px;
+    
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
   }
-}
-  @media (min-width: 576px) {
-    div.img-container {
-      height: 225px;
+  #save-btn{
+    top: 270px;
+    right: 110px;
+  }
+  #add-friend{
+    top: 270px;
+    right: 260px;
+  }
+  #dating{
+    width: 70px;
+    height: 70px;
+    top: 260px;
+    right: 170px;
+    >img{
+      width: 50px;
+      height: 50px;
+      margin-left: 6px;
     }
   }
-  
-  @media (min-width: 768px) {
-    div.img-container {
-      height: 270px;
-    }
-  }
-  
-  .profile-image-div {
-    display: flex;
-      width: 200px;
-    position: relative;
-    top: -55px;
-    margin-left: 12px;
-  }
-  .profile-image-div btn{
-        position: absolute;
-        
-    }
-.profile-image-div img{
+  >button{
+    border: 2px solid rgb(255, 255, 255);
+    background-color:white;
     border-radius: 50%;
-}
-.profile-image-div p{
-    align-self: flex-end;
-}
-#svg-like{
-    font-size: 30px;
-    color: rgb(86, 91, 80);
-}
-@media (max-width: 768px){
-    .profile-image-div{
-        width: 175px;
+    width: 45px;
+    box-shadow:1px 1px 2px #ffffff,
+                -1px -1px 2px #ffffff;
+    height: 45px;
+    position: absolute;
+   
+    >img{
+      width: 20px;
+      margin-left: 10px;
     }
-    #svg-like{
-        font-size: 25px;
-    }
+  }
 }
+
+.data-container{
+  margin-top: 50px;
+}
+.name-container{
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  margin: 2rem;
+
   
-@media (max-width: 576px){
-    .profile-image-div {
-        width: 130px;
-      position: relative;
-      top: -35px;
-      margin-left: 5px;
-    }
-    #svg-like{
-      
-        font-size: 25px;
-       
-    }
+  #add-p{
+    font-size: small;
+    font-weight: 100;
+    color: rgb(179, 166, 166);
+    }  }
+ 
+  #share-button{
+    border-radius: 30%;
+    box-shadow: 2px seagreen;
+    background:none;
+  }
+ 
+#about-me{
+  font-size:15px;
+  font-weight: 100;
+  color: rgb(179, 166, 166);
+  width: 200px;
 }
+.about{
+  margin-left: 2rem;
+  #heading-about{
+    font-size: 20px;
+  }
+  #about-me{
+    width: 100%;
+  }
+}
+#name-p{
+  font-size: 24px;
+  width: 200px;
+
+}
+.interest-container{
+  margin-left: 2rem;
+  margin-top: 18px;
+  p{
+    
+      font-size: 20px;
+    }
   
+  .interest{
+    margin-top: 18px;
+  margin-right: 1rem;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 9px;
+  >button{
+    border-radius: 25px;
+    width: 100px;
+    height: 30px;
+    font-size:12px;
+    // border: 2px solid;
+  }}
+  #btn-1{
+    background-color: rgb(139, 149, 109);
+  }
+  #btn-2{
+    background-color: rgb(198, 232, 255);
+  }
+  #btn-3{
+    background-color: rgb(255, 230, 247);
+  }
+  #btn-4{
+    background-color: rgb(192, 223, 217);
+  }
+  #btn-5{
+    background-color: rgb(167, 255, 167);
+  }
+  #btn-6{
+    background-color: rgb(153, 214, 255);
+  }
+}

@@ -6,6 +6,9 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 const Home=()=>{
+    // useEffect(()=>{
+    //     localStorage.clear()
+    // },[])
     return(
         <>
         <Header />

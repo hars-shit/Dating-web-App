@@ -17,7 +17,7 @@ import { FaMoon, FaSun } from 'react-icons/fa';
       zIndex={'1'}
       marginLeft="2"
       pos={'absolute'}
-      top={'4'}
+      top={'2'}
       right={'4'}
      
 

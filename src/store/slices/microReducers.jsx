@@ -9,7 +9,7 @@ const microReducers=createSlice({
         // reducer to save profile 
         saveProfile(state,action){
             state.push(action.payload);
-        }
+        },
     }
 })
 

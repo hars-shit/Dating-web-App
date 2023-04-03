@@ -1,0 +1,98 @@
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+   
+    align-items: center;
+    >.image-box{
+    >img{
+        // border-radius: 124px;
+        width: 64vh;
+    }
+}
+>.data-box{
+    background-color: rgb(114, 126, 161);
+    display: flex;
+    height: 85.2%;
+    padding: 5px;
+    width: 40%;
+    justify-content: center;
+   gap: 20px;
+    align-items: center;
+  
+   flex-direction: column;
+   > #heading{
+    color: white;
+    font-size: 40px;
+   }
+ > .data-box-interest{
+    display: flex;
+    gap: 40px;
+    >form{
+        display: flex;
+        flex-direction: column;
+        >p{
+            margin-bottom: 15px;
+        }
+        >label{
+            margin-bottom: 15px;
+            background-color: white;
+            border-radius: 10px;
+            width: 15vh;
+            height: 5vh;
+            text-align: center;
+            >input{
+                margin-right: 6px;
+                margin-top: 6px;
+            }
+        }
+    }
+}
+>.data-box-dob{
+    >form{
+
+        >p{
+            margin-bottom: 10px;
+        }
+        >input{
+            height: 5vh;
+            width: 35vh;
+            border-radius: 10px;
+            padding: 8px;
+        }
+    }
+}
+>.data-box-district{
+    >form{
+        >p{
+            margin-bottom: 15px;
+        }
+        >select{
+            height: 5vh;
+            width: 35vh;
+            border-radius: 10px;
+            padding: 8px;
+        }
+    }
+}
+ > .btn{
+    margin-top: 20px;
+  
+ }
+
+}
+}
+p{
+    color: white;
+    
+}
+#btn-next{
+    // border: 2px solid white;
+    width: 20vh;
+    height: 6vh;
+    color: white;
+    background-color: rgb(18, 125, 86);
+   } 
+  
+  

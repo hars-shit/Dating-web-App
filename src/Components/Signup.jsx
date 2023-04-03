@@ -4,19 +4,23 @@ import React, { useState } from "react";
 import {FcGoogle} from 'react-icons/fc'
 import {FaFacebook} from 'react-icons/fa'
 import {AiFillTwitterCircle} from 'react-icons/ai'
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { saveProfile } from "../store/slices/microReducers";
-
+import '../Styles/SignUp.scss'
+import { Link } from "react-router-dom";
 function Signup(){
+
+  
     const [storeData,setStoreData]=useState({
         firstName:"",
         lastName:"",
         email:"",
         password:"",
     })
-    const user = useSelector((state)=>state.users)
+    // const user = useSelector((state)=>state.users)
     const dispatch = useDispatch()
     const handleChange=(e)=>{
+   
         const name=e.target.name;
         const value=e.target.value;
         setStoreData((pre)=>{
@@ -24,15 +28,17 @@ function Signup(){
         })
     };
     const handleSubmit=(e)=>{
-        e.preventDefault()
         dispatch(saveProfile(storeData))
-        console.log(user)
     }
+
+
+
+
     return(
 <Container maxW={'container.xl'} h={'100vh'} p={['8','16']} >
-    <form onSubmit={handleSubmit}>
+    <form>
       { /* login form data  */}
-        <VStack alignItems={'stretch'}  w={['full','96']} m={'auto'} my={'16'} >
+        <VStack alignItems={'stretch'}  w={['full','96']} m={'auto'} my={'8'} >
             <Heading fontSize={["2xl","3xl"]} alignSelf={'center'} className="hindi-heading">पधारो दगडीयो !!</Heading>
             <Text >SignUp and explore new people throughout our beautiful Uttarakhand</Text>
 
@@ -49,8 +55,14 @@ function Signup(){
 
             <Text  alignSelf={'flex-start'}>Password(6 or more characters)</Text>
             <Input type={'password'} name="password" onChange={handleChange}/>
+            
+            
+            <Text  alignSelf={'flex-start'}>Re-Enter the  Password</Text>
+            <Input type={'password'} name="password" onChange={handleChange}/>
+           
+           {/* for submitting info */}
 
-            <Button colorScheme={'purple'} w={"full"} type={'submit'}>Join now</Button>
+           <Link to={'/Question1'}><Button colorScheme={'purple'} w={"full"} onClick={handleSubmit}>Register</Button></Link>
             <Text >or</Text>
            <HStack fontSize={'3xl'} gap={'8'}>
                 <a href="/">< FcGoogle/></a>

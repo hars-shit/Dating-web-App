@@ -1,0 +1,40 @@
+.main-container{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    >.zodiac-div{
+        display: grid;
+       grid-template-columns:auto auto auto auto auto;
+       column-gap: 20px;
+       row-gap: 10px;
+       > #heading{
+       grid-column-start: 1;
+        grid-column-end: 6;
+        font-size: 25px;
+        color: cadetblue;
+    }
+       >button{
+        border: 1px solid;
+         border-radius: 20px;
+         width: 150px;
+       }
+    }
+    >.profession{
+        display: grid;
+       grid-template-columns:auto auto auto auto auto;
+       column-gap: 20px;
+       row-gap: 10px;
+       > #second-heading{
+       grid-column-start: 1;
+        grid-column-end: 6;
+        font-size: 25px;
+        color: cadetblue;
+    }
+       >button{
+        border: 1px solid;
+         border-radius: 20px;
+         width: 150px;
+       }
+    }
+
+}

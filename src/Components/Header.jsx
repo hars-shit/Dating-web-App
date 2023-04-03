@@ -27,7 +27,7 @@ const Header=()=> {
    
       <Button
         pos={'relative'}
-        top={'4'}
+        top={'2'}
         left={'4'}
         p={'0'}
         w={'10'}
@@ -113,7 +113,7 @@ const Header=()=> {
       </Drawer>
 
       {/* line bellow header   */}
-      <HStack pos={'relative'} top={'30px'} backgroundColor={'ActiveBorder'} maxH={"full"}  height={'0.1px'} marginBottom={"10"}/>
+      <HStack pos={'relative'} top={'20px'} backgroundColor={'ActiveBorder'} maxH={"full"}  height={'0.1px'} marginBottom={"10"}/>
     
     </>
   );
