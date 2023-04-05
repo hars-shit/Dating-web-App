@@ -1,10 +1,10 @@
 import React from "react";
 import {RiHeartAddFill} from 'react-icons/ri'
-
+import friend from './../assets/friend.webp'
 import {BiMessageRoundedAdd} from 'react-icons/bi'
 import { Card,  CardFooter, Text, Button, Image, Container} from '@chakra-ui/react'
 
-import {BiLike,BiChat,BiShare} from 'react-icons/bi'
+import {BiLike,BiChat} from 'react-icons/bi'
 
 import '../Styles/CardPerPerson.scss' 
 import { data } from "./data";
@@ -60,8 +60,8 @@ const CardPerPerson=()=>{
     <Button flex='1' variant='ghost' leftIcon={<BiChat />}>
     
     </Button>
-    <Button flex='1' variant='ghost' leftIcon={<BiShare />}>
-     
+    <Button flex='1' variant='ghost'>
+              <Image width={'20px'} src={friend}/>
     </Button>
   </CardFooter>
 </Card>

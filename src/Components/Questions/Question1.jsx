@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
-import culture from '/home/harshit/Desktop/React/social-media-app/src/assets/view.jpg'
-import '/home/harshit/Desktop/React/social-media-app/src/Styles/Question.scss' 
+import culture from '../../assets/view.jpg'
+import '../../Styles/Question.scss' 
 import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
 import { saveProfile } from '../../store/slices/microReducers';

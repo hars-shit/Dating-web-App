@@ -1,7 +1,7 @@
 // hoobies and zodic sign 
 
 import React, { useState } from "react";
-import '/home/harshit/Desktop/React/social-media-app/src/Styles/Question2.scss'
+import '../../Styles/Question2.scss'
 import { Link } from "react-router-dom";
   
 
