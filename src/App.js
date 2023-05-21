@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes   } from 'react-router-dom';
 import './Styles/App.scss'
-import  ColorModeSwitcher  from './ColorModeSwitcher';
+
 import Login from './Components/Login';
 import ForgetPassword from './Components/ForgetPassword'
 import SignUp from './Components/Signup';
@@ -14,6 +14,10 @@ import { useSelector } from 'react-redux';
 import Question1 from './Components/Questions/Question1';
 import Question2 from './Components/Questions/Question2';
 import Question3 from './Components/Questions/Question3';
+import Manage from './Components/Manage';
+import FriendList from './Components/FriendList';
+import Liked from './Components/Liked';
+// import AddNew from './Components/AddNew';
 
 function App() {
   const user=useSelector((state)=>{
@@ -26,7 +30,7 @@ function App() {
     <>
    <Router>
    
-    <ColorModeSwitcher />
+  
     <Routes>
         {/* <Route path='/'  element={user ? <Home /> : <Login /> }/> */}
     <Route path='/Home' element={<Home />} />
@@ -40,7 +44,9 @@ function App() {
     <Route path='/Notification' element={<Notification />}/>
     <Route path='/Search' element={<Search/>}/>
     <Route path='/Message' element={<Message />}/>
-
+    <Route path='/manage' element={<Manage />}/>
+    <Route path='/friendlist' element={<FriendList/>}/>
+    <Route path='/liked' element={<Liked />}/>
 
     </Routes>
    </Router>

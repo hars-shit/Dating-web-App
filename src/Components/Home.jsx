@@ -2,19 +2,19 @@
 import React from "react";
 
 import CardPerPerson from "./CardPerPerson";
-import Footer from "./Footer";
 import Header from "./Header";
+import Stories from "./Stories";
+import Footer from "./Footer";
+
 
 const Home=()=>{
-    // useEffect(()=>{
-    //     localStorage.clear()
-    // },[])
+    
     return(
         <>
-        <Header />
-        
-       <Footer />
+    <Header />
+    <Stories />
         <CardPerPerson />
+        <Footer />
         </>
     )
 }

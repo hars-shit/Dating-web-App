@@ -4,6 +4,7 @@ import storage from "redux-persist/lib/storage";
 import { persistReducer } from "redux-persist";
 import { combineReducers } from "@reduxjs/toolkit";
 import QuestionReducer from "./QuestionReducer";
+import Likes from "./Likes";
 
 
 const persistConfig={
@@ -15,6 +16,8 @@ const persistConfig={
 const reducer=combineReducers({
     users:microReducers,
     users1:QuestionReducer,
+    user2:Likes,
+    
 })
 
 const persistedReducer=persistReducer(persistConfig,reducer);

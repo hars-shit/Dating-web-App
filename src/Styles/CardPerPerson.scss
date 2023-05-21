@@ -1,25 +1,83 @@
-#cardHeader{
-    padding: 0;
+.card-components{
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    position: absolute;
-    right: 0px;
-    gap: 10px;
-    height: 130px;
-    padding-top: 10px;
-
-   
-    overflow: hidden;
-    width: fit-content;
-
-   
-}
-.cardFooter{
-    button{
-       
-        svg{
-            font-size:30px;
-            color:rgb(123, 32, 32)
+    padding: 20px 20px;
+    > .per-card{
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+        flex-direction: column;
+        > .card-header{
+            display: flex;
+            gap: 10px;
+            >img{
+                width: 50px;
+                height: 50px;
+                border: 1px solid;
+                border-radius: 50%;
+            }
+            >div{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 140px;
+                margin-right: 100px;
+                
+                > .name{
+                    font-size: 16px;
+                    color: black;
+                }
+                > .city{
+                    font-size: 11px;
+                    color: gray;
+                }
+            }
+            > button{
+                justify-self: flex-end;
+            }
+        }
+        > .post-image{
+            > img{
+                border: 1px solid;
+                border-radius: 5px;
+                width: 334px;
+                height: 236px;
+            }
+        }
+        > .icons{
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+            > button{
+                display: flex;
+                gap: 15px; 
+               &:hover{
+                color: white;
+               }
+                > p{
+                    font-size: 17px;
+                    color: gray;
+                }
+               > svg{
+                color: #7A8FA6;
+                font-size: 25px;
+                &:hover{
+                    
+                    color: rgb(64, 76, 143); 
+                }
+                }
+            }
+            > button:nth-child(1){
+                justify-items:flex-start;
+                > svg{
+                    font-size: 32px;
+                    position: relative;
+                    top: -3px;
+                   
+                }
+            }
         }
     }
 }

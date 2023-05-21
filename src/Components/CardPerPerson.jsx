@@ -1,75 +1,102 @@
-import React from "react";
-import {RiHeartAddFill} from 'react-icons/ri'
-import friend from './../assets/friend.webp'
-import {BiMessageRoundedAdd} from 'react-icons/bi'
-import { Card,  CardFooter, Text, Button, Image, Container} from '@chakra-ui/react'
+import React, { useState } from 'react';
+import { AiFillHeart } from 'react-icons/ai';
+import { FaFacebookMessenger } from 'react-icons/fa';
+import { HiOutlineDotsVertical } from 'react-icons/hi';
+import { RiShareFill } from 'react-icons/ri';
+import '../Styles/CardPerPerson.scss';
+import { data } from './data';
+import { useDispatch } from 'react-redux';
+import { savevalues } from '../store/slices/Likes';
 
-import {BiLike,BiChat} from 'react-icons/bi'
+const CardPerPerson = () => {
+  // for handling click on icons like,share,message
+  const [clicklike, setClicklike] = useState(0);
+  //  for message
+  const [clickMessage, setClickMessage] = useState(0);
+  //  for share
+  const [clickShare, setClickShare] = useState(0);
 
-import '../Styles/CardPerPerson.scss' 
-import { data } from "./data";
+  //  for increment and decrement of likes
+  const [changeLike, setChangeLike] = useState(false);
+  const [changeMessage, setChangeMessage] = useState(false);
+  const [changeShare, setChangeShare] = useState(false);
+  const dispatch=useDispatch();
 
-const CardPerPerson=()=>{
-  // const dispatch=useDispatch();
+  const handleClickLike = () => {
+    if (!changeLike) {
+      setClicklike(clicklike + 1);
+      setChangeLike(true);
+      dispatch(savevalues(clicklike));
+    } else {
+      setClicklike(clicklike - 1);
+      setChangeLike(false);
+      dispatch(savevalues(clicklike));
+    }
+  };
 
-  // const dataOfUser=useSelector((state)=>{
-  //   return state.users;
-  // })
+  const handleClickMessage = () => {
+    if (!changeMessage) {
+      setClickMessage(clickMessage + 1);
+      setChangeMessage(true);
+    } else {
+      setClickMessage(clickMessage - 1);
+      setChangeMessage(false);
+    }
+  };
+  const handleClickShare = () => {
+    if (!changeShare) {
+      setClickShare(clickShare + 1);
+      setChangeShare(true);
+    } else {
+      setClickShare(clickShare - 1);
+      setChangeShare(false);
+    }
+  };
 
-  // const addProfile=()=>{
-  //   console.log("happy");
-  //   dispatch(saveProfile())
-  // }
-    return(
-      <>
-      <div>
-        {
-        
-          data.map((item)=>{
-            return(
-            
-    <Card maxW={['1xl','2xl']}  background={'none'} margin={'2'} border={'4px solid '}>
+  
+  return (
+    <div className="card-components">
+      {data.map((item) => {
+        return (
+          <div className="per-card">
+            {/* for header info */}
+            <div className="card-header">
+              <img src={item.image} alt="" />
+              <div className="name-place">
+                <p className="name">{item.Name}</p>
+                <p className="city">{item.City}</p>
+              </div>
+              <button>
+                <HiOutlineDotsVertical />
+              </button>
+            </div>
 
-<Container textAlign={'end'} id='cardHeader' > 
-    <Button background={'none'}> <RiHeartAddFill  fontSize={'30px'} color={'rgb(123, 32, 32)'}/> </Button>
-    <Button background={'none'}> <BiMessageRoundedAdd fontSize={'33px'} color={'rgb(123, 32, 32)'}/> </Button>
- 
-  </Container>
-  <Image
-    objectFit='cover'
-    width={'100%'}
-    height={'auto'}
-   
-    
-    h={'480px'}  src={item.image}  alt='Chakra UI'
-  />
-   
-  <Container pos={'absolute'} top={'420px'} >
-      <Text fontSize={'20px'} color={'whiteAlpha.900'}>{item.Name},{item.Age}</Text> 
-      <Text fontSize={'20px'} color={'whiteAlpha.900'}>{item.City}</Text>
-  </Container>
+            {/* for post */}
+            <div className="post-image">
+              <img
+                src="https://www.hdwallpaper.nu/wp-content/uploads/2015/07/beautiful_Wallpaper_025.jpg"
+                alt=""
+              />
+            </div>
 
-  <CardFooter
-    justify='space-between'
-    flexDirection={'row'}
-    flexWrap='wrap' p={'4px'} className={"cardFooter"} >
-   
-    <Button flex='1' variant='ghost'  leftIcon={<BiLike />}>
-    
-    </Button>
-    <Button flex='1' variant='ghost' leftIcon={<BiChat />}>
-    
-    </Button>
-    <Button flex='1' variant='ghost'>
-              <Image width={'20px'} src={friend}/>
-    </Button>
-  </CardFooter>
-</Card>
-   )
-  })
-}
-</div>  
-</>     
-)
-}
+            <div className="icons">
+              <button onClick={handleClickLike}>
+                <AiFillHeart />
+                <p>{clicklike}</p>
+              </button>
+              <button onClick={handleClickMessage}>
+                <FaFacebookMessenger />
+                <p>{clickMessage}</p>
+              </button>
+              <button onClick={handleClickShare}>
+                <RiShareFill />
+                <p>{clickShare}</p>
+              </button>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 export default CardPerPerson;

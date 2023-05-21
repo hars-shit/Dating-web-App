@@ -51,7 +51,7 @@ const Login=()=>{
             <Text  >or</Text>
             <Button  color={'GrayText'} border={'20px solid none'}  w={"full"}><AiFillApple size={'25'} /> Log in with Apple</Button>
         </VStack>
-       
+  
         </VStack>
         <HStack justifyContent={'center'} flexDirection={'row'} mt={'4'}>
         <Link to={'/Signup'} ><Text textDecoration={'underline'}>New User? Sign Up </Text>

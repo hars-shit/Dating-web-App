@@ -44,21 +44,21 @@ function Signup(){
 
             {/* for input and text */}
             <VStack spacing={'4'} py={"8"}>
-            <Text  alignSelf={'flex-start'}>First name</Text>
-            <Input name="firstName" type={'text'} onChange={handleChange}/>
+            <Text color={'black'} fontWeight={'700'}  alignSelf={'flex-start'}>First name</Text>
+            <Input  name="firstName" placeholder="First Name" type={'text'} onChange={handleChange}/>
 
-            <Text  alignSelf={'flex-start'}>Last name</Text>
-            <Input name="lastName"  type={'text'} onChange={handleChange}/>
+            <Text color={'black'} fontWeight={'700'}  alignSelf={'flex-start'}>Last name</Text>
+            <Input name="lastName" placeholder="Last Name"  type={'text'} onChange={handleChange}/>
 
-            <Text  alignSelf={'flex-start'}>Email</Text>
-            <Input name="email" type={'email'} onChange={handleChange}/>
+            <Text color={'black'} fontWeight={'700'}  alignSelf={'flex-start'}>Email</Text>
+            <Input name="email" placeholder="Email" type={'email'} onChange={handleChange}/>
 
-            <Text  alignSelf={'flex-start'}>Password(6 or more characters)</Text>
-            <Input type={'password'} name="password" onChange={handleChange}/>
+            <Text color={'black'} fontWeight={'700'}  alignSelf={'flex-start'}>Password</Text>
+            <Input type={'password'} placeholder="6 or more characters" name="password" onChange={handleChange}/>
             
             
-            <Text  alignSelf={'flex-start'}>Re-Enter the  Password</Text>
-            <Input type={'password'} name="password" onChange={handleChange}/>
+            <Text color={'black'} fontWeight={'700'}  alignSelf={'flex-start'}> Password</Text>
+            <Input type={'password'} placeholder="Re-enter the password" name="password" onChange={handleChange}/>
            
            {/* for submitting info */}
 
