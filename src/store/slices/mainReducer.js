@@ -15,8 +15,6 @@ const persistConfig={
 
 const reducer=combineReducers({
     users:microReducers,
-    users1:QuestionReducer,
-    user2:Likes,
     
 })
 

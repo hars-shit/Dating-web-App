@@ -2,8 +2,7 @@ import { Container, VStack, Text, HStack, Button, Image } from '@chakra-ui/react
 import React from 'react';
 import { FaFacebookMessenger } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-
-import { friends } from '../Components/FriendList';
+import friends from '../FriendList';
 const Liked = () => {
   return (
     <Container display={'flex'} maxW={'160vh'} marginTop={'2rem'}>

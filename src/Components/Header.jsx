@@ -17,9 +17,24 @@ import {
 import '../Styles/Header.scss'
 import { Link } from 'react-router-dom';
 import {AiOutlineRight} from 'react-icons/ai'
+import { useSelector } from 'react-redux';
+// import localStorage from 'redux-persist/es/storage';
+// import axios from 'axios';
 // import { BiMenuAltLeft } from 'react-icons/bi';
 const Header=()=> {
+  // const navigate = useNavigate()
 
+  const user = useSelector((state)=>state.users[0])
+//   const handleLogout = async () =>{
+//     // alert()
+//     localStorage.clear()
+//     try{
+//         await axios.post(`http://localhost:8000/api/v1/auth/logout`)
+//         navigate('/')
+//     }catch(err){
+//         console.log(err)
+//     }
+// }
     // useClosure used for handle open,close,toggle.
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
@@ -54,7 +69,8 @@ const Header=()=> {
 
         {/* linked to profile 
          */}
-       <Link to={'/Profile'}><button className='view-profile'>View Profile <AiOutlineRight /></button>
+         {/* /${user._id}` */}
+       <Link to={`/Profile/${user._id}`}><button className='view-profile'>View Profile <AiOutlineRight /></button>
        </Link> 
         
           </DrawerHeader>
@@ -75,10 +91,10 @@ const Header=()=> {
 
               
               <Button colorScheme={'purple'} variant={'ghost'} onClick={onClose}>
-                <Link to={'/Upload'}>Help</Link>
+                <Link to={'/Help'}>Help</Link>
               </Button>
               <Button colorScheme={'purple'} variant={'ghost'} onClick={onClose}>
-                <Link to={'/Upload'}>About Us</Link>
+                <Link to={'https://github.com/hars-shit/Dating-web-App'}>About Us</Link>
               </Button>
 
             <VStack >
@@ -96,9 +112,9 @@ const Header=()=> {
             width={"full"}
             justifyContent={'flex-start'}
             >
-        <Button colorScheme={'purple'} onClick={onClose}>
-            <Link to={'/Logout'}>Log Out</Link>
-        </Button>
+         {/* <Button colorScheme={'purple'} onClick={onClose}>
+            <Link to={'/Logout'} onClick={handleLogout}>Log Out</Link> 
+         </Button>  */}
        
             </HStack>
 

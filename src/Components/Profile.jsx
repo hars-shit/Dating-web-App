@@ -1,23 +1,54 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState } from 'react';
+// import { useSelector } from 'react-redux';
 import '../Styles/Profile.scss';
-import { HiOutlineShare } from 'react-icons/hi';
-import { Button } from '@chakra-ui/react';
+
 // import dating from '../assets/dating.png'
 import save from '../assets/save.png';
 import addFriend from '../assets/add-user.png';
 import like from '../assets/like.png';
+// import { useParams } from 'react-router-dom';
+// import axios from 'axios';
+// import CardPerPerson from './CardPerPerson';
+import { Grid, GridItem,  Img } from '@chakra-ui/react';
+
 const Profile = () => {
-  const data = useSelector(state => {
-    return state.users;
-  });
-  console.log(data);
+  // const [curUser, setCurUser] = useState()
+  // const[posts, setPosts] = useState([])
+  const[fileImg, setFileImg] = useState(null)
+  // const {id} = useParams()
+  
+ 
+
+  // useEffect(()=>{
+  //   const loadProfile = async()=>{
+  //     const response = await axios.get(`http://localhost:8000/api/v1/posts/all/${id}`,{withCredentials:true})
+  //     setPosts(response.data)
+  //     // console.log(response)
+  //   }
+  //   loadProfile()
+  // },[id])
+
+// const [files,setfiles]=useState();
+const handleReadURl=(e)=>{
+  // setfiles(e.target.files);
+  setFileImg(e.target.files[0])
+}
+const handleupload=(e)=>{
+  // const formData=new FormData();
+  // for(let i=0;i<files.length;i++){
+  //   formData.append(`images[${i}]`,files[0]);
+  // }
+  
+}
+  // const data = useSelector(state => {
+  //   return state.users;
+  // });
 
   return (
     <>
       {/* for profile image  */}
       <div className="profile-image">
-        <img id="img" src="https://bit.ly/dan-abramov" alt="" />
+        <img id="img" src={fileImg ? URL.createObjectURL(fileImg) : "https://bit.ly/dan-abramov" }alt="" />
         {/* <button><img id="dating-icon" src={dating} alt="" /> */}
         {/* </button> */}
         <button id="save-btn">
@@ -31,53 +62,52 @@ const Profile = () => {
         </button>
       </div>
 
+
       {/* <Button background={'none'}> <Image src={dating} /> </Button> */}
       {/* <Button background={'none'}> <BiMessageRoundedAdd fontSize={'33px'} color={'rgb(123, 32, 32)'}/> </Button> */}
 
       <div className="data-container">
+
+      <input type="file"  onChange={handleReadURl} accept='Image'/>
+        <button onClick={handleupload}>upload</button>
+
         <div className="name-container">
-          <div>
-            {data.map((user, id) => {
+          {/* <div>
+            {posts.map((post, id) => {
               return (
-                <div className="personal-data">
-                  <p id="name-p">
-                    {user.firstName} {user.lastName}{' '}
-                  </p>
-                </div>
+                <CardPerPerson p={post} key={id}/>
               );
             })}
-            <p id="add-p">Almora,Uttarakhand</p>
-          </div>
-          <div className="btn-container">
-            <Button id="share-button">
-              <HiOutlineShare />
-            </Button>
-          </div>
+            <p id="add-p">{curUser?.state}</p>
+          </div> */}
+         
         </div>
+        </div> 
 
-        {/* about the user division  */}
-        <div className="about">
-          <p id="heading-about">About</p>
-          <p id="about-me">
-            My name is Dolly Mamgai and i enjoy meet new people and finding ways
-            to help them have an uplifting experience...{' '}
-          </p>
-        </div>
+        {/* about the posts division  */}
 
-        {/* user interest division  */}
-
-        <div className="interest-container">
-          <p>Interests</p>
-          <div className="interest">
-            <button id="btn-1">Music</button>
-            <button id="btn-2">Coding</button>
-            <button id="btn-3">Web Design</button>
-            <button id="btn-4">Developer</button>
-            <button id="btn-5">Travelling</button>
-            <button id="btn-6">Dancing</button>
-          </div>
-        </div>
-      </div>
+        <Grid  templateColumns='repeat(3, 1fr)' rowGap={"1"} border={"1px solid skyblue"} borderRadius={"2xl"}>
+          <GridItem>
+            <Img style={{width:"130px",height:"130px"}}  src='https://bit.ly/dan-abramov'/>
+            </GridItem>
+            <GridItem>
+            <Img style={{width:"130px",height:"130px"}} src='https://bit.ly/dan-abramov'/>
+            </GridItem>
+            <GridItem>
+            <Img style={{width:"130px",height:"130px"}} src='https://bit.ly/dan-abramov'/>
+            </GridItem>
+            <GridItem>
+            <Img style={{width:"130px",height:"130px"}} src='https://bit.ly/dan-abramov'/>
+            </GridItem>
+            <GridItem>
+            <Img style={{width:"130px",height:"130px"}} src='https://bit.ly/dan-abramov'/>
+            </GridItem>
+            <GridItem>
+            <Img style={{width:"130px",height:"130px"}} src='https://bit.ly/dan-abramov'/>
+            </GridItem>
+            
+        </Grid>
+    
     </>
   );
 };

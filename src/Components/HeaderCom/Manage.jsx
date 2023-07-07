@@ -2,9 +2,9 @@ import { Button, Container, HStack, VStack,Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 // import Friends from "./Friends";
 // import AddNew from "./AddNew";
-import friends from "./FriendList";
-import addlist from "./AddNew"
-import Friends from "./Friends";
+import friends from '../FriendList';
+import addlist from "../AddNew"
+import Friends from "../Friends";
 
 const Manage=()=>{
     const [friendList,setFriendList]=useState(false);
@@ -31,9 +31,7 @@ const Manage=()=>{
        
         </HStack>
         <Container width={'48vh'}>
-            
-             
-               
+     
             {
                 friendList && 
                 friends.map((friendList)=>{

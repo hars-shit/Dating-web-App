@@ -1,14 +1,33 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AiFillHeart } from 'react-icons/ai';
 import { FaFacebookMessenger } from 'react-icons/fa';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
 import { RiShareFill } from 'react-icons/ri';
 import '../Styles/CardPerPerson.scss';
-import { data } from './data';
-import { useDispatch } from 'react-redux';
+// import { data } from './data';
+import { useDispatch, useSelector } from 'react-redux';
 import { savevalues } from '../store/slices/Likes';
+import axios from 'axios';
 
-const CardPerPerson = () => {
+const CardPerPerson = ({p}) => {
+  const user = useSelector((state)=>state.users[0])
+  const [currentUser, setCurrentUser] = useState()
+
+  useEffect(()=>{
+    const loadUser = async ()=>{
+      try{
+        const response = await axios.get(`http://localhost:8000/api/v1/user/get/${p?.userId}`,{
+          withCredentials:true
+        })
+        // console.log(response.data)
+        setCurrentUser(response.data)
+      }catch(err){
+        console.log(err)
+      }
+    }
+    loadUser()
+  },[])
+
   // for handling click on icons like,share,message
   const [clicklike, setClicklike] = useState(0);
   //  for message
@@ -23,6 +42,7 @@ const CardPerPerson = () => {
   const dispatch=useDispatch();
 
   const handleClickLike = () => {
+    
     if (!changeLike) {
       setClicklike(clicklike + 1);
       setChangeLike(true);
@@ -33,6 +53,7 @@ const CardPerPerson = () => {
       dispatch(savevalues(clicklike));
     }
   };
+
 
   const handleClickMessage = () => {
     if (!changeMessage) {
@@ -53,18 +74,17 @@ const CardPerPerson = () => {
     }
   };
 
+
   
   return (
     <div className="card-components">
-      {data.map((item) => {
-        return (
           <div className="per-card">
             {/* for header info */}
             <div className="card-header">
-              <img src={item.image} alt="" />
+              <img src={currentUser?.image || 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.atlantissportsclubs.com%2Fwp-content%2Fuploads%2F2016%2F09%2FBoyPlaceholder-01.png&f=1&nofb=1&ipt=f82fd9e6bad9de78a145012e88008dd8b03532b3c39992dcf86dd53754da106f&ipo=images'} alt="" />
               <div className="name-place">
-                <p className="name">{item.Name}</p>
-                <p className="city">{item.City}</p>
+                <p className="name">{currentUser?.FirstName+ " "+currentUser?.LastName}</p>
+                <p className="city">{currentUser?.state}</p>
               </div>
               <button>
                 <HiOutlineDotsVertical />
@@ -74,7 +94,7 @@ const CardPerPerson = () => {
             {/* for post */}
             <div className="post-image">
               <img
-                src="https://www.hdwallpaper.nu/wp-content/uploads/2015/07/beautiful_Wallpaper_025.jpg"
+                src={p?.image}
                 alt=""
               />
             </div>
@@ -82,7 +102,7 @@ const CardPerPerson = () => {
             <div className="icons">
               <button onClick={handleClickLike}>
                 <AiFillHeart />
-                <p>{clicklike}</p>
+                <p>{p?.likes.length}</p>
               </button>
               <button onClick={handleClickMessage}>
                 <FaFacebookMessenger />
@@ -94,8 +114,6 @@ const CardPerPerson = () => {
               </button>
             </div>
           </div>
-        );
-      })}
     </div>
   );
 };

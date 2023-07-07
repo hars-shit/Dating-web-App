@@ -3,7 +3,7 @@ import React from "react";
 const Notification=()=>{
     return(
         <>
-        hello
+       {alert("Not Ready Yet ")}
         </>
     )
 }
